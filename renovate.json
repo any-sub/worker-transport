@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "config:base",
+    "local>any-sub/renovate-config"
+  ],
+  "labels": [
+    "dependencies"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@any-sub/worker-transport",
+  "version": "0.0.6",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": "https://github.com/any-sub/worker-transport",
+  "license": "MIT",
+  "devDependencies": {
+    "barrelsby": "2.7.0",
+    "typescript": "5.0.4",
+    "zod": "3.21.4"
+  },
+  "scripts": {
+    "barrels": "barrelsby --config .barrelsby.json",
+    "build": "yarn barrels && tsc --project tsconfig.compile.json",
+    "prepublish": "yarn build",
+    "auth": "npx google-artifactregistry-auth"
+  }
+}

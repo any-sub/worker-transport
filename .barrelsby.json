@@ -1,0 +1,9 @@
+{
+  "directory": [
+    "./src"
+  ],
+  "exclude": [
+    ".spec.ts"
+  ],
+  "delete": true
+}
