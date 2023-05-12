@@ -1,41 +1,25 @@
 import { z } from "zod";
 import { StateParser } from "./State";
+import { ConsumeParser } from "./Consume";
+import { ReportParser } from "./Report";
 
 export const WorkType = z.enum(["http"]);
 export const SourceType = z.enum(["html", "json"]);
 
-export const LookupMode = z.enum(["css", "xpath", "regex", "all"]);
-
-const LookupSettings = z.object({
-  mode: LookupMode,
-  value: z.string().optional()
+export const SourceParser = z.object({
+  type: SourceType,
+  location: z.string()
 });
 
-const TextReportingSettings = z.object({
-  match: z.instanceof(RegExp).optional(),
-  template: z.string().optional()
-});
+export type Source = z.infer<typeof SourceParser>;
 
 export const WorkParser = z.object({
   id: z.string().uuid(),
   type: WorkType,
-  source: z.object({
-    type: SourceType,
-    location: z.string()
-  }),
-  consume: z.object({
-    lookup: z.object({
-      container: LookupSettings,
-      children: LookupSettings.optional()
-    }).optional()
-  }),
+  source: SourceParser,
+  consume: ConsumeParser,
   currentState: StateParser,
-  report: z.object({
-    title: TextReportingSettings.optional(),
-    image: LookupSettings.optional(),
-    description: TextReportingSettings.optional(),
-    url: z.union([LookupSettings, TextReportingSettings]).optional()
-  }).optional()
+  report: ReportParser.optional()
 });
 
-export type Work = z.infer<typeof WorkParser>
+export type Work = z.infer<typeof WorkParser>;
