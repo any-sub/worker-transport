@@ -13,7 +13,6 @@
   "scripts": {
     "barrels": "barrelsby --config .barrelsby.json",
     "build": "yarn barrels && tsc --project tsconfig.compile.json",
-    "prepublish": "yarn build",
-    "auth": "npx google-artifactregistry-auth"
+    "prepublish": "yarn build"
   }
 }
