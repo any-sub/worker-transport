@@ -4,7 +4,7 @@ export const LookupMode = z.enum(["css", "xpath", "regex", "all"]);
 
 export const LookupSettingsParser = z.object({
   mode: LookupMode,
-  value: z.string().optional()
+  value: z.string()
 });
 
 export type LookupSettings = z.infer<typeof LookupSettingsParser>;
