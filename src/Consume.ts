@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const LookupMode = z.enum(["css", "xpath", "regex", "all"]);
+export const LookupMode = z.enum(["css", "xpath", "regex", "all", "jsonpath"]);
 
 export const LookupSettingsParser = z.object({
   mode: LookupMode,
