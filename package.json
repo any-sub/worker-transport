@@ -6,7 +6,7 @@
   "repository": "https://github.com/any-sub/worker-transport",
   "license": "MIT",
   "devDependencies": {
-    "barrelsby": "2.7.0",
+    "barrelsby": "2.8.0",
     "typescript": "5.0.4",
     "zod": "3.21.4"
   },
