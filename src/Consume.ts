@@ -10,17 +10,17 @@ export const LookupSettingsParser = z.object({
 export type LookupSettings = z.infer<typeof LookupSettingsParser>;
 
 export const ConsumeReportPartsParser = z.object({
-  title: LookupSettingsParser.optional(),
-  image: LookupSettingsParser.optional(),
-  description: LookupSettingsParser.optional(),
-  url: LookupSettingsParser.optional()
+  title: LookupSettingsParser.nullish(),
+  image: LookupSettingsParser.nullish(),
+  description: LookupSettingsParser.nullish(),
+  url: LookupSettingsParser.nullish()
 });
 
 export type ConsumeReportParts = z.infer<typeof ConsumeReportPartsParser>;
 
 export const ConsumeParser = z.object({
-  lookup: LookupSettingsParser.optional(),
-  parts: ConsumeReportPartsParser.optional()
+  lookup: LookupSettingsParser.nullish(),
+  parts: ConsumeReportPartsParser.nullish()
 });
 
 export type Consume = z.infer<typeof ConsumeParser>;

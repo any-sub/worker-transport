@@ -3,11 +3,11 @@ import { StateParser } from "./State";
 
 export const ResultParser = z.object({
   matches: z.array(z.object({
-    title: z.string().optional(),
-    image: z.string().url().optional(),
-    description: z.string().optional(),
-    url: z.string().url().optional()
-  })).optional(),
+    title: z.string().nullish(),
+    image: z.string().url().nullish(),
+    description: z.string().nullish(),
+    url: z.string().url().nullish()
+  })).nullish(),
   state: StateParser
 });
 

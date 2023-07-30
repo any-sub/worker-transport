@@ -18,7 +18,7 @@ export const WorkParser = z.object({
   type: WorkType,
   source: SourceParser,
   consume: ConsumeParser,
-  report: ReportParser.optional()
+  report: ReportParser.nullish()
 });
 
 export type Work = z.infer<typeof WorkParser>;
