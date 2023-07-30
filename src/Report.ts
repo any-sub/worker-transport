@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const TextReportingSettings = z.object({
-  match: z.instanceof(RegExp).optional(),
+  match: z.string().optional(),
   template: z.string().optional()
 });
 

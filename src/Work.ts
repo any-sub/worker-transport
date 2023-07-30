@@ -18,7 +18,6 @@ export const WorkParser = z.object({
   type: WorkType,
   source: SourceParser,
   consume: ConsumeParser,
-  currentState: StateParser,
   report: ReportParser.optional()
 });
 

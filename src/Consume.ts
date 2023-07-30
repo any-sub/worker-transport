@@ -19,10 +19,7 @@ export const ConsumeReportPartsParser = z.object({
 export type ConsumeReportParts = z.infer<typeof ConsumeReportPartsParser>;
 
 export const ConsumeParser = z.object({
-  lookup: z.object({
-    container: LookupSettingsParser,
-    children: LookupSettingsParser.optional()
-  }).optional(),
+  lookup: LookupSettingsParser.optional(),
   parts: ConsumeReportPartsParser.optional()
 });
 
