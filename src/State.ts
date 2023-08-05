@@ -2,8 +2,8 @@ import { z } from "zod";
 import { ResultUnitParser } from "./ResultUnit";
 
 export const StateParser = z.object({
-  lastUpdated: z.date(),
+  lastUpdated: z.string().datetime(),
   data: z.array(ResultUnitParser)
-}).nullish();
+});
 
 export type State = z.infer<typeof StateParser>;
