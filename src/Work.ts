@@ -13,8 +13,10 @@ export const SourceParser = z.object({
 
 export type Source = z.infer<typeof SourceParser>;
 
+export const WorkId = z.string().uuid();
+
 export const WorkParser = z.object({
-  id: z.string().uuid(),
+  id: WorkId,
   type: WorkType,
   source: SourceParser,
   consume: ConsumeParser,
