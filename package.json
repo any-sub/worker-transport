@@ -1,6 +1,6 @@
 {
   "name": "@any-sub/worker-transport",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/any-sub/worker-transport",
